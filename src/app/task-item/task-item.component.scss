@@ -1,0 +1,26 @@
+.item {
+    display: flex;
+    justify-content: space-between;
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    border: 2px solid #000;
+    border-radius: 2px;
+    &__deadline {
+        display: flex;
+        flex-direction: column;
+        span {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 1rem;
+    }
+    &__category {
+        display: flex;
+        align-items: center;
+    }
+}

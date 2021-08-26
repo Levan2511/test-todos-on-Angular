@@ -1,0 +1,38 @@
+<div class="overlay">
+    <div class="dialog">
+        <button mat-icon-button class="dialog__close" (click)="emitCloseEvent()">
+            <mat-icon>close</mat-icon>
+        </button>
+        <form class="dialog__form" #dialog="ngForm">
+            <mat-form-field class="dialog__input" appearance="fill">
+                <mat-label>Task title</mat-label>
+                <input matInput placeholder="Enter title" 
+                        [(ngModel)]="title" name="title"
+                        required>
+            </mat-form-field>
+            <mat-form-field class="dialog__input" appearance="fill">
+                <mat-label>Task description</mat-label>
+                <input matInput placeholder="Enter description" 
+                        [(ngModel)]="descr" name="description"
+                        required> 
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Choose a deadline date</mat-label>
+                <input matInput [matDatepicker]="picker" 
+                        [formControl]="dateInputController"
+                        required>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-radio-group aria-label="Select an option" class="dialog__category" color="primary">
+                <mat-radio-button value="work">Work</mat-radio-button>
+                <mat-radio-button value="education">Education</mat-radio-button>
+                <mat-radio-button value="hobby">Hobby</mat-radio-button>
+                <mat-radio-button value="sport">Sport</mat-radio-button>
+                <mat-radio-button value="other">Other</mat-radio-button>
+            </mat-radio-group>
+            <button mat-stroked-button class="dialog__success-btn" 
+                    color="primary" [disabled]="!dialog.valid">Add to task list</button>
+        </form>
+    </div>
+</div>

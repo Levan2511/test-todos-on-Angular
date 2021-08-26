@@ -1,0 +1,42 @@
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(190, 190, 190, 0.822);
+}
+.dialog {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    width: 500px;
+    border: 1px solid #000;
+    border-radius: 2px;
+    background: linear-gradient(to right, rgb(218, 218, 218), rgb(255, 255, 255));
+    &__input {
+        display: block;
+    }
+    &__form {
+        width: 85%;
+    }
+    &__close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+    &__category {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 0;
+    }
+    &__success-btn {
+        display: block;
+        margin: 1rem auto 0;
+    }
+}
